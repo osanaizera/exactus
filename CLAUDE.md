@@ -73,7 +73,7 @@ apps/web/
     ├── app/proposta/page.tsx    # Deck da proposta (17 slides; o Rank concentra site, artigo e motor de conteúdo)
     ├── app/proposta/data.ts     # Plano, estudo, países, setup, preços, funcionalidades
     ├── app/proposta/site.ts     # O site novo: secções do esboço, De → Para, entregas, calendário
-    ├── app/proposta/stack.ts    # O que a stack (Next.js, Vercel, Supabase, SDCMS, CRM) entrega
+    ├── app/proposta/stack.ts    # A stack em números: quem usa, capacidade incluída, o que fica da Exaktus
     ├── app/proposta/offers.ts   # Os três métodos (Rank, Reach, Run): texto das capas
     ├── app/proposta/cases.ts    # Casos com números (fonte e data no cabeçalho)
     ├── app/proposta/collages.ts # Imagens do deck (CDN Higgsfield, provisório) e do esboço

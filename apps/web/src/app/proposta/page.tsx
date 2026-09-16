@@ -28,7 +28,7 @@ import {
 } from "./data";
 import { offers } from "./offers";
 import { cases, casesNote, headlineStats } from "./cases";
-import { stack, stackOwnership } from "./stack";
+import { stackLayers, stackStats, stackProof, stackOwnership, stackSource } from "./stack";
 import { ESBOCO_URL, siteSections, siteShift, siteDeliverables, siteTimeline, siteNeeds } from "./site";
 import { COLLAGE_TITANIO, COLLAGE_MERCADOS, ESBOCO_SHOT } from "./collages";
 
@@ -390,63 +390,69 @@ export default function PropostaPage() {
         </div>
       </Slide>
 
-      {/* 10 · A stack */}
+      {/* 10 · A stack: quem usa, quanto aguenta, o que fica */}
       <Slide num="10" label="A tecnologia" variant="glow" ghost="10">
         <Reveal>
           <span className="eyebrow tech">A tecnologia por trás</span>
           <h2 className="display-2">
-            A mesma stack dos nossos produtos. <strong>O que ela entrega à Exaktus.</strong>
+            A mesma base do ChatGPT e da Nike. <strong>Sem servidor para manter.</strong>
           </h2>
           <p className="lede">
-            O site novo é construído com a mesma tecnologia do nosso gestor de
-            conteúdo e do nosso CRM: Next.js e React, alojado na Vercel, com
-            dados no Supabase. Não é uma escolha de gosto; é o que permite ao
-            site ser rápido, ser lido pelas IAs e falar com o resto do sistema.
+            O site novo é construído com a mesma tecnologia dos nossos
+            produtos: Next.js e React, alojado na Vercel, com dados no
+            Supabase. É a base de sites com milhões de visitas por dia; para a
+            Exaktus, quer dizer que o site aguenta qualquer pico, é lido por
+            inteiro pelo Google e pelas IAs, e a conta é de consumo, não de
+            servidores.
           </p>
         </Reveal>
-        <div className="featgrid">
-          {stack.map((s, i) => (
-            <Reveal key={s.name} delay={0.05 + i * 0.05}>
-              <div className="card tech h-full stackcard">
+        <div className="stacklayers">
+          {stackLayers.map((s, i) => (
+            <Reveal key={s.name} delay={0.05 + i * 0.06}>
+              <div className="card tech h-full stacklayer">
                 <div className="icon"><Icon name={s.icon} /></div>
                 <span className="idx">{s.role}</span>
                 <h3>{s.name}</h3>
-                <ul>
-                  {s.delivers.map((d) => <li key={d}>{d}</li>)}
-                </ul>
+                <p>{s.what}</p>
+                <div className="stack-who">
+                  <span className="mono-label">Quem usa</span>
+                  <div className="stack-logos">
+                    {s.usedBy.map((u) => <span key={u} className="tag">{u}</span>)}
+                  </div>
+                </div>
+                <p className="stack-for">{s.forExaktus}</p>
               </div>
             </Reveal>
           ))}
-          <Reveal delay={0.3}>
+        </div>
+        <Reveal delay={0.2}>
+          <div className="statband mt-12">
+            {stackStats.map((st) => (
+              <div key={st.value} className="stat">
+                <div className={st.neutral ? "big neutral" : "big"}>{st.value}</div>
+                <div className="cap">{st.label}</div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+        <div className="split mt-12">
+          <Reveal delay={0.1}>
+            <div className="card h-full stackcard">
+              <span className="idx">Já corre nesta stack</span>
+              <h3>Não é uma promessa: já está no ar</h3>
+              <ul>{stackProof.map((d) => <li key={d}>{d}</li>)}</ul>
+            </div>
+          </Reveal>
+          <Reveal delay={0.16}>
             <div className="card brand h-full stackcard">
-              <div className="icon"><Icon name="target" /></div>
               <span className="idx">No fim</span>
               <h3>O que fica da Exaktus</h3>
-              <ul>
-                {stackOwnership.map((d) => <li key={d}>{d}</li>)}
-              </ul>
+              <ul>{stackOwnership.map((d) => <li key={d}>{d}</li>)}</ul>
             </div>
           </Reveal>
         </div>
         <Reveal delay={0.2}>
-          <div className="split mt-10">
-            <div className="feat illustrated">
-              <Art name="site" />
-              <div className="feat-body">
-                <span className="tag tag-tech">Site → CRM</span>
-                <h3>Cada pedido chega com origem</h3>
-                <p>O formulário de compatibilidade, o pedido de demonstração e a inscrição na Academy entram no CRM Draivv como contactos, com a página e a campanha de onde vieram.</p>
-              </div>
-            </div>
-            <div className="feat illustrated">
-              <Art name="stack" />
-              <div className="feat-body">
-                <span className="tag tag-tech">Três camadas</span>
-                <h3>Sem servidor para manter</h3>
-                <p>Vercel serve o site, Supabase guarda os dados, o SDCMS publica o conteúdo. Cada camada é gerida pelo fornecedor; a Exaktus paga o consumo, não a manutenção.</p>
-              </div>
-            </div>
-          </div>
+          <p className="body-s mt-6 !text-[12px]">{stackSource}</p>
         </Reveal>
       </Slide>
 
