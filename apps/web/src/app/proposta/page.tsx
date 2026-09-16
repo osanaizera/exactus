@@ -93,7 +93,6 @@ export default function PropostaPage() {
             <div className="fact"><p className="k">Formato</p><p className="v">Site novo + Rank + Reach</p></div>
             <div className="fact"><p className="k">Duração</p><p className="v">6 meses · site no ar no mês 2</p></div>
             <div className="fact"><p className="k">Âmbito</p><p className="v">Site inteiro · Reach: 1 linha, 2 países</p></div>
-            <div className="fact"><p className="k">Investimento</p><p className="v">€7.000 setup + €4.200 / mês*</p></div>
           </div>
           <p className="scrollhint">Deslize para continuar ↓</p>
         </Reveal>
