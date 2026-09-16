@@ -7,11 +7,12 @@ Proposta da Draivv para a **Exaktus · Material de Reabilitação Oral, S.A.**
 
 - `/`: a vitrine da Draivv, explicada em dois produtos (Captação de novos
   clientes e Plataforma de relacionamento) e como se ligam.
-- `/proposta`: o deck da proposta, na linha da proposta Monteiro, Ribas
-  (argumento de plataforma), mas com o **site novo em destaque**: setup do
-  projeto (site), Rank mensal (artigos técnicos, SEO e GEO) e Reach
-  (prospeção internacional em dois países), seis meses, com a plataforma
-  Draivv desde a assinatura.
+- `/proposta`: o deck da proposta, em 12 slides. Abre sem preço, com o
+  diagnóstico do canal digital (volumes de pesquisa reais em Portugal e
+  Espanha, o que passa a ser medido) e o plano de artigos técnicos de alta
+  intenção; depois o site novo (esboço + projeto + stack), a
+  internacionalização num só slide, a plataforma, o plano, os casos e só
+  então o investimento (setup do site + mensalidade). Sem capas por método.
 - `/esboco`: o **esboço navegável do site novo** da Exaktus, um ficheiro
   estático (`apps/web/public/esboco/index.html`) servido por rewrite. É a
   peça que a proposta manda abrir. Marca aplicada: a da Exaktus (teal).
@@ -70,8 +71,9 @@ apps/web/
 ├── public/brand/                # Marca Draivv + imagens do esboço + captura do esboço
 └── src/
     ├── app/page.tsx             # Vitrine Draivv
-    ├── app/proposta/page.tsx    # Deck da proposta (18 slides)
-    ├── app/proposta/data.ts     # Plano, estudo, países, setup, preços, funcionalidades
+    ├── app/proposta/page.tsx    # Deck da proposta (12 slides)
+    ├── app/proposta/data.ts     # Plano, setup, preços, funcionalidades da plataforma
+    ├── app/proposta/seo.ts      # Diagnóstico de procura (volumes PT/ES, DataForSEO) e plano de artigos
     ├── app/proposta/site.ts     # O site novo: secções do esboço, De → Para, entregas, calendário
     ├── app/proposta/stack.ts    # O que a stack (Next.js, Vercel, Supabase, SDCMS, CRM) entrega
     ├── app/proposta/offers.ts   # Os três métodos (Rank, Reach, Run): texto das capas
@@ -90,6 +92,14 @@ defeito, tema `open` (claro, facetas) em secções escolhidas, um foco de luz
 por tela, gradiente sempre azul → verde, Manrope 200 nos títulos, botão pill,
 card 16 px, símbolo sempre azul. Sem travessões no texto; português de
 Portugal. O esboço em `/esboco` é a exceção: aplica a marca da Exaktus.
+
+## Imagens do esboço
+
+As fotografias das três linhas de produto e da produção no esboço foram
+geradas no Higgsfield (gpt_image_2_5) e estão referenciadas pelo CDN
+(`d8j0ntlcm91z4.cloudfront.net`), provisoriamente; a imagem da secção
+"Precisão" e a da Academy estão no repositório. Trocar por ficheiros em
+`public/esboco/assets` quando forem validadas.
 
 ## Convenções
 

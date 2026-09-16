@@ -32,13 +32,14 @@ produto (Reach, mensal). Desde a assinatura, acesso à plataforma Draivv
 - **Três linhas, três compradores**: o site cobre as três; o Reach trabalha
   uma linha de cada vez.
 
-## Os três métodos (slides 03 a 06)
+## Diagnóstico e artigos (slides 03 e 04)
 
-| Oferta | Nome | Em uma frase | Nesta proposta |
-|---|---|---|---|
-| 01 | Draivv Rank | Site novo, artigos técnicos a partir do que a Exaktus sabe e presença no Google e nas respostas de IA | Base: site (setup) + serviço mensal |
-| 02 | Draivv Reach | Prospeção internacional feita pela nossa equipa: estudo de mercado, empresas investigadas, mensagens e reuniões marcadas | 2 países, 6 meses, auditoria de IA incluída |
-| 03 | Draivv Run | Software e assistentes de IA construídos para o processo do cliente | CRM e orçamentos incluídos ao assinar; agentes sob proposta |
+O deck abre pelo canal digital: volumes de pesquisa mensais no Google em
+Portugal e Espanha para os termos da Exaktus (DataForSEO, setembro de 2026,
+em `apps/web/src/app/proposta/seo.ts`), o que passa a ser medido desde o
+dia 1 (tráfego e origem, termos, presença nas IAs, aptidão técnica do canal)
+e dez artigos técnicos ligados a pesquisas de alta intenção, cada um com a
+sua página de catálogo.
 
 ## O site novo (slides 08 a 10)
 
@@ -70,13 +71,10 @@ produto (Reach, mensal). Desde a assinatura, acesso à plataforma Draivv
 
 ## Slides
 
-Capa · O que sabemos · Os três métodos · Rank · Reach · Run · A proposta
-(com auditoria de IA) · O site novo (esboço) · O projeto do site (entregas,
-calendário, o que precisamos) · A tecnologia (stack) · Plano de 6 meses ·
-Os dois países · A plataforma (mockups: orçamento rastreado, Claude por
-MCP) · O motor de conteúdo (mockup de artigo técnico e catálogo) ·
-Resultados (Tiajo no Reach, Casa Flora no Rank) · Investimento (setup +
-mensal) · Equipa · Próximos passos.
+Capa (sem preço) · O que sabemos · Há procura (diagnóstico) · Artigos
+técnicos · O site novo (esboço) · O projeto do site e a tecnologia ·
+Internacionalização (um slide, com auditoria de IA) · A plataforma · Plano
+de 6 meses · Resultados · Investimento · Equipa e próximos passos.
 
 Regras de escrita: frases curtas, sem jargão de IA, sem antíteses, sem nomes
 de interlocutores do cliente, sem promessas clínicas.
