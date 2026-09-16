@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { Slide } from "./Slide";
 import { Reveal } from "./Reveal";
 import type { Offer } from "@/app/proposta/offers";
@@ -6,10 +7,22 @@ import type { Offer } from "@/app/proposta/offers";
  * Slide de oferta: uma capa por método (Reach, Rank, Run). Imagem em faixa
  * com o selo da oferta, título com a palavra-chave a azul, resumo em
  * linguagem simples e três blocos: o que é, como funciona, o que recebem.
+ * `children` acrescenta blocos de produto por baixo (mockups, funcionalidades),
+ * para a oferta que a proposta quer mostrar em detalhe.
  */
-export function OfferSlide({ num, offer }: { num: string; offer: Offer }) {
+export function OfferSlide({
+  num,
+  offer,
+  id,
+  children,
+}: {
+  num: string;
+  offer: Offer;
+  id?: string;
+  children?: ReactNode;
+}) {
   return (
-    <Slide num={num} label={`${offer.name} ${offer.nameStrong}`} variant="open">
+    <Slide num={num} id={id} label={`${offer.name} ${offer.nameStrong}`} variant="open">
       <Reveal>
         <div className={offer.art ? "kv-band is-art" : "kv-band"}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -42,6 +55,7 @@ export function OfferSlide({ num, offer }: { num: string; offer: Offer }) {
           </div>
         </Reveal>
       </div>
+      {children}
     </Slide>
   );
 }

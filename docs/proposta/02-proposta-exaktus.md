@@ -72,7 +72,7 @@ sua página de catálogo.
 ## Slides
 
 Capa (sem preço) · O que sabemos · Há procura (diagnóstico) · Artigos
-técnicos · O site novo (esboço) · O projeto do site e a tecnologia ·
+técnicos · O site novo (esboço navegável dentro do deck) · O projeto do site e a tecnologia ·
 Internacionalização (um slide, com auditoria de IA) · A plataforma · Plano
 de 6 meses · Resultados · Investimento · Equipa e próximos passos.
 

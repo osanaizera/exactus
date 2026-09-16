@@ -81,7 +81,7 @@ apps/web/
     ├── app/proposta/collages.ts # Imagens do deck (CDN Higgsfield, provisório) e do esboço
     ├── components/site/         # Hero, Products, Platform, Flow, Team, FinalCTA
     ├── components/ui/           # Mark, Lockup, Slide, OfferSlide, Reveal, Icon, RevealMedia
-    ├── components/mock/         # ProposalMock, ChatMock, ArticleMock (ecrãs ilustrativos)
+    ├── components/mock/         # ProposalMock, ChatMock, ArticleMock (ecrãs ilustrativos), SitePlayer (esboço em iframe à escala)
     └── components/art/Art.tsx   # Vinhetas SVG/CSS, uma por conceito (inclui site e stack)
 ```
 

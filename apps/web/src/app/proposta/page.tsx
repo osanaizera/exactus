@@ -6,7 +6,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Lockup } from "@/components/ui/Lockup";
 import { Icon } from "@/components/ui/Icon";
 import { Team } from "@/components/site/Team";
-import { Frame } from "@/components/mock/Frame";
+import { SitePlayer } from "@/components/mock/SitePlayer";
 import { ProposalMock } from "@/components/mock/ProposalMock";
 import { ChatMock } from "@/components/mock/ChatMock";
 import { Art } from "@/components/art/Art";
@@ -247,16 +247,16 @@ export default function PropostaPage() {
           </p>
           <div className="mb-8 flex flex-wrap items-center gap-3">
             <a href={ESBOCO_URL} target="_blank" rel="noopener" className="btn btn-primary">Abrir o esboço do site</a>
-            <span className="body-s !text-[13px]">Abre numa página nova. Versão 0.1, para discussão.</span>
+            <span className="body-s !text-[13px]">Ou navegue-o já aqui, no ecrã ao lado. Versão 0.1, para discussão.</span>
           </div>
         </Reveal>
         <Reveal delay={0.08}>
-          <a href={ESBOCO_URL} target="_blank" rel="noopener" className="site-shot" aria-label="Abrir o esboço do site novo">
-            <Frame title="exaktus.pt · esboço v0.1 · desktop" className="mock-light">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={ESBOCO_SHOT} alt="Esboço do site novo da Exaktus: hero com desenho técnico de um pilar e implante, três linhas de produto e fluxo digital" />
-            </Frame>
-          </a>
+          <SitePlayer
+            url={ESBOCO_URL}
+            poster={ESBOCO_SHOT}
+            posterAlt="Esboço do site novo da Exaktus: hero com desenho técnico de um pilar e implante, três linhas de produto e fluxo digital"
+            title="exaktus.pt · esboço v0.1"
+          />
         </Reveal>
         <div className="featgrid mt-8">
           {siteSections.map((s, i) => (
