@@ -50,9 +50,12 @@ públicos (site, esboço) e a nota do CRM. Confirmar antes de enviar.
 | Plataforma | Ao assinar: CRM e módulo de orçamentos rastreados. O resto sob medida, sob proposta |
 
 Valores em `apps/web/src/app/proposta/data.ts` e em
-`docs/proposta/02-proposta-exaktus.md`. A telemetria de leitura da proposta
-(`TRACKING_PUBLIC_ID` em `proposta/page.tsx`) está vazia até a proposta ser
-criada no CRM.
+`docs/proposta/02-proposta-exaktus.md`. Publicado em
+https://exaktus-draivv.vercel.app (projeto Vercel `exaktus-draivv`, deploy
+automático a partir do branch de produção). No CRM Draivv: oportunidade
+"Exaktus — Site novo + Rank + Reach (Portugal)" e proposta rastreada
+`vhHedQ1DYdC_` (link para o cliente: https://app.salesdrive.com.br/pr/vhHedQ1DYdC_);
+o `TRACKING_PUBLIC_ID` em `proposta/page.tsx` liga o deck a essa proposta.
 
 ## Stack e estrutura
 
