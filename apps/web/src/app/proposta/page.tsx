@@ -12,7 +12,7 @@ import { ChatMock } from "@/components/mock/ChatMock";
 import { Art } from "@/components/art/Art";
 import { pricing, setup, plan, scopeNote, scopeShort, platformAtSignature, platformCustom } from "./data";
 import { cases, casesNote, headlineStats } from "./cases";
-import { stack, stackOwnership } from "./stack";
+import { stackLayers, stackStats, stackProof, stackOwnership, stackSource } from "./stack";
 import { ESBOCO_URL, siteSections, siteShift, siteDeliverables, siteTimeline, siteNeeds } from "./site";
 import { keywordRows, keywordTotals, measures, articles } from "./seo";
 import { COLLAGE_TITANIO, COLLAGE_MERCADOS, ESBOCO_SHOT } from "./collages";
@@ -320,28 +320,56 @@ export default function PropostaPage() {
           ))}
         </div>
         <Reveal delay={0.16}>
-          <span className="mono-label mt-8 block">O que a tecnologia entrega à Exaktus</span>
-          <div className="featgrid mt-3">
-            {stack.map((s) => (
-              <div key={s.name} className="card tech h-full stackcard">
+          <span className="mono-label mt-10 block">A tecnologia: a mesma base do ChatGPT e da Nike, sem servidor para manter</span>
+          <div className="stacklayers mt-3">
+            {stackLayers.map((s) => (
+              <div key={s.name} className="card tech h-full stacklayer">
                 <div className="icon"><Icon name={s.icon} /></div>
                 <span className="idx">{s.role}</span>
                 <h3>{s.name}</h3>
-                <ul>{s.delivers.map((d) => <li key={d}>{d}</li>)}</ul>
+                <p>{s.what}</p>
+                <div className="stack-who">
+                  <span className="mono-label">Quem usa</span>
+                  <div className="stack-logos">
+                    {s.usedBy.map((u) => <span key={u} className="tag">{u}</span>)}
+                  </div>
+                </div>
+                <p className="stack-for">{s.forExaktus}</p>
               </div>
             ))}
+          </div>
+        </Reveal>
+        <Reveal delay={0.2}>
+          <div className="statband mt-8">
+            {stackStats.map((st) => (
+              <div key={st.value} className="stat">
+                <div className={st.neutral ? "big neutral" : "big"}>{st.value}</div>
+                <div className="cap">{st.label}</div>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+        <div className="split mt-8">
+          <Reveal delay={0.1}>
+            <div className="card h-full stackcard">
+              <span className="idx">Já corre nesta stack</span>
+              <h3>Não é uma promessa: já está no ar</h3>
+              <ul>{stackProof.map((d) => <li key={d}>{d}</li>)}</ul>
+            </div>
+          </Reveal>
+          <Reveal delay={0.16}>
             <div className="card brand h-full stackcard">
-              <div className="icon"><Icon name="target" /></div>
               <span className="idx">No fim</span>
               <h3>O que fica da Exaktus</h3>
               <ul>{stackOwnership.map((d) => <li key={d}>{d}</li>)}</ul>
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+        </div>
         <Reveal delay={0.2}>
           <p className="body-s mt-6 max-w-[80ch] !text-[13px]">
             Precisamos da Exaktus: {siteNeeds.map((s) => s.toLowerCase()).join("; ")}. O que faltar, resolvemos convosco na primeira semana.
           </p>
+          <p className="body-s mt-3 max-w-[80ch] !text-[12px]">{stackSource}</p>
         </Reveal>
       </Slide>
 

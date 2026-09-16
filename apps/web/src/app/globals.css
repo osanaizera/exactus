@@ -3250,3 +3250,48 @@ b {
   font-weight: 500;
   color: var(--brand-text);
 }
+
+/* ---------- Slide da tecnologia: três camadas, quem usa, para a Exaktus ---------- */
+.stacklayers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.stacklayer > p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.stack-who {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border);
+}
+
+.stack-who .mono-label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent-text);
+}
+
+.stack-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.stack-logos .tag {
+  font-weight: 600;
+}
+
+.stacklayer .stack-for {
+  margin-top: 14px;
+  padding-left: 12px;
+  border-left: 2px solid var(--brand-fill);
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text);
+}
