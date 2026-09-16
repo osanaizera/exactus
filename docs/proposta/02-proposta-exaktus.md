@@ -70,13 +70,18 @@ produto (Reach, mensal). Desde a assinatura, acesso à plataforma Draivv
 
 ## Slides
 
-Capa · O que sabemos · Os três métodos · Rank · Reach · Run · A proposta
-(com auditoria de IA) · O site novo (esboço) · O projeto do site (entregas,
-calendário, o que precisamos) · A tecnologia (stack) · Plano de 6 meses ·
-Os dois países · A plataforma (mockups: orçamento rastreado, Claude por
-MCP) · O motor de conteúdo (mockup de artigo técnico e catálogo) ·
-Resultados (Tiajo no Reach, Casa Flora no Rank) · Investimento (setup +
-mensal) · Equipa · Próximos passos.
+Capa · O que sabemos · Os três métodos · Rank (a dobra do produto: capa da
+oferta, mini player do esboço navegável com botão para o projeto do site,
+mockup de artigo técnico e catálogo, e as seis funcionalidades do motor de
+conteúdo) · Reach · Run · A proposta (com auditoria de IA) · O site novo
+(esboço, secções, De → Para) · O projeto do site (entregas, calendário, o
+que precisamos) · A tecnologia (stack) · Plano de 6 meses · Os dois países ·
+A plataforma (mockups: orçamento rastreado, Claude por MCP) · Resultados
+(Tiajo no Reach, Casa Flora no Rank) · Investimento (setup + mensal) ·
+Equipa · Próximos passos.
+
+A capa não mostra o investimento; o preço aparece só no slide de
+Investimento.
 
 Regras de escrita: frases curtas, sem jargão de IA, sem antíteses, sem nomes
 de interlocutores do cliente, sem promessas clínicas.

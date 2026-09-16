@@ -12,6 +12,7 @@ import { Frame } from "@/components/mock/Frame";
 import { ProposalMock } from "@/components/mock/ProposalMock";
 import { ChatMock } from "@/components/mock/ChatMock";
 import { ArticleMock } from "@/components/mock/ArticleMock";
+import { SitePlayer } from "@/components/mock/SitePlayer";
 import { Art } from "@/components/art/Art";
 import {
   pricing,
@@ -29,7 +30,7 @@ import { offers } from "./offers";
 import { cases, casesNote, headlineStats } from "./cases";
 import { stack, stackOwnership } from "./stack";
 import { ESBOCO_URL, siteSections, siteShift, siteDeliverables, siteTimeline, siteNeeds } from "./site";
-import { COLLAGE_TITANIO, COLLAGE_MERCADOS, COLLAGE_ACADEMY, ESBOCO_SHOT } from "./collages";
+import { COLLAGE_TITANIO, COLLAGE_MERCADOS, ESBOCO_SHOT } from "./collages";
 
 export const metadata: Metadata = {
   title: "Proposta · Draivv × Exaktus",
@@ -58,6 +59,10 @@ const heard = [
  * Draivv. Proposta cmu461v6t0002kj6qohuqnnta, ligada à oportunidade da Exaktus.
  */
 const TRACKING_PUBLIC_ID = "OsvijufrNG6D";
+
+/** O Rank abre o deck em detalhe; Reach e Run ficam com a capa da oferta. */
+const rank = offers.find((o) => o.key === "rank")!;
+const others = offers.filter((o) => o.key !== "rank");
 
 export default function PropostaPage() {
   return (
@@ -154,9 +159,82 @@ export default function PropostaPage() {
         </Reveal>
       </Slide>
 
-      {/* 04, 05, 06 · Uma capa por oferta */}
-      {offers.map((o, i) => (
-        <OfferSlide key={o.key} num={`0${4 + i}`} offer={o} />
+      {/* 04 · Rank: a capa da oferta e, por baixo, o produto em detalhe
+          (o esboço navegável, o artigo técnico e o motor de conteúdo) */}
+      <OfferSlide num="04" offer={rank} id="rank">
+        <div className="offer-block" data-section="04 Rank · O site novo">
+          <div className="split-mock">
+            <Reveal>
+              <span className="mono-label">O site novo · setup do projeto</span>
+              <h3 className="display-3">
+                Já há um esboço. <strong>Navegue-o sem sair daqui.</strong>
+              </h3>
+              <p className="lede">
+                Construímos um esboço navegável do site novo a partir do que a
+                Exaktus mostra hoje: as três linhas de produto, o fluxo digital,
+                a compatibilidade por sistema, a Academy e a Innova. É a
+                primeira entrega do Rank e o sítio onde o conteúdo vai viver.
+              </p>
+              <div className="btnrow">
+                <a href="#projeto-site" className="btn btn-primary">Ver o projeto do site</a>
+                <a href={ESBOCO_URL} target="_blank" rel="noopener" className="btn btn-outline">Abrir o esboço</a>
+              </div>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <SitePlayer
+                url={ESBOCO_URL}
+                poster={ESBOCO_SHOT}
+                posterAlt="Esboço do site novo da Exaktus: hero com desenho técnico de um pilar e implante, três linhas de produto e fluxo digital"
+                title="exaktus.pt · esboço v0.1"
+              />
+            </Reveal>
+          </div>
+        </div>
+
+        <div className="offer-block" data-section="04 Rank · O motor de conteúdo">
+          <div className="split-mock">
+            <Reveal>
+              <span className="mono-label">O motor de conteúdo · serviço mensal</span>
+              <h3 className="display-3">
+                Conteúdo técnico <strong>com a memória da Exaktus.</strong>
+              </h3>
+              <p className="lede">
+                O Rank escreve a partir do que a Exaktus sabe. Fichas técnicas,
+                tabelas de compatibilidade e certificados entram numa base de
+                conhecimento, o tom de voz é aprendido, e cada artigo sai
+                citado, medido, publicado no site novo e com a publicação para
+                o LinkedIn pronta.
+              </p>
+            </Reveal>
+            <Reveal delay={0.08}>
+              <ArticleMock />
+              <p className="body-s mt-3 !text-[12px]">
+                Ecrã ilustrativo: artigo técnico gerado a partir das fichas da
+                Exaktus, com a fonte citada, e a ficha de produto do catálogo
+                indexável.
+              </p>
+            </Reveal>
+          </div>
+          <div className="featgrid mt-10">
+            {contentEngine.map((f, i) => (
+              <Reveal key={f.title} delay={0.05 + i * 0.05}>
+                <div className="feat illustrated">
+                  <Art name={f.art} />
+                  <div className="feat-body">
+                    <span className="tag tag-brand">{f.tag}</span>
+                    <h3>{f.title}</h3>
+                    <p>{f.text}</p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </OfferSlide>
+
+      {/* 05, 06 · Reach e Run: uma capa por oferta */}
+      {others.map((o, i) => (
+        <OfferSlide key={o.key} num={`0${5 + i}`} offer={o} />
       ))}
 
       {/* 07 · A proposta */}
@@ -257,7 +335,7 @@ export default function PropostaPage() {
       </Slide>
 
       {/* 09 · O projeto do site */}
-      <Slide num="09" label="O projeto do site" variant="open" ghost="6 sem.">
+      <Slide num="09" id="projeto-site" label="O projeto do site" variant="open" ghost="6 sem.">
         <Reveal>
           <span className="eyebrow">O projeto do site</span>
           <h2 className="display-2">
@@ -502,46 +580,8 @@ export default function PropostaPage() {
         </Reveal>
       </Slide>
 
-      {/* 14 · O motor de conteúdo (Rank) */}
-      <Slide num="14" label="O motor de conteúdo" variant="open" collage={COLLAGE_ACADEMY}>
-        <Reveal>
-          <span className="eyebrow">O motor de conteúdo</span>
-          <h2 className="display-2">
-            Conteúdo técnico <strong>com a memória da Exaktus.</strong>
-          </h2>
-          <p className="lede">
-            O Rank escreve a partir do que a Exaktus sabe. Fichas técnicas,
-            tabelas de compatibilidade e certificados entram numa base de
-            conhecimento, o tom de voz é aprendido, e cada artigo sai citado,
-            medido, publicado no site novo e com a publicação para o LinkedIn
-            pronta.
-          </p>
-        </Reveal>
-        <Reveal delay={0.08}>
-          <ArticleMock />
-          <p className="body-s mt-3 mb-8 !text-[12px]">
-            Ecrã ilustrativo: artigo técnico gerado a partir das fichas da Exaktus,
-            com a fonte citada, e a ficha de produto do catálogo indexável.
-          </p>
-        </Reveal>
-        <div className="featgrid">
-          {contentEngine.map((f, i) => (
-            <Reveal key={f.title} delay={0.05 + i * 0.05}>
-              <div className="feat illustrated">
-                <Art name={f.art} />
-                <div className="feat-body">
-                  <span className="tag tag-brand">{f.tag}</span>
-                  <h3>{f.title}</h3>
-                  <p>{f.text}</p>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </Slide>
-
-      {/* 15 · Resultados */}
-      <Slide num="15" label="Resultados" ghost="15">
+      {/* 14 · Resultados */}
+      <Slide num="14" label="Resultados" ghost="14">
         <Reveal>
           <span className="eyebrow">Casos e números</span>
           <h2 className="display-2">
@@ -590,8 +630,8 @@ export default function PropostaPage() {
         </Reveal>
       </Slide>
 
-      {/* 16 · Investimento */}
-      <Slide num="16" label="Investimento" variant="light" ghost="€">
+      {/* 15 · Investimento */}
+      <Slide num="15" label="Investimento" variant="light" ghost="€">
         <Reveal>
           <span className="eyebrow">Investimento</span>
           <h2 className="display-2">
@@ -676,8 +716,8 @@ export default function PropostaPage() {
         </Reveal>
       </Slide>
 
-      {/* 17 · Equipa */}
-      <Slide num="17" label="Equipa" ghost="17">
+      {/* 16 · Equipa */}
+      <Slide num="16" label="Equipa" ghost="16">
         <Reveal>
           <span className="eyebrow">Quem trabalha nisto</span>
           <h2 className="display-2">
@@ -702,8 +742,8 @@ export default function PropostaPage() {
         <Team id="equipa-proposta" />
       </Slide>
 
-      {/* 18 · Próximos passos */}
-      <Slide num="18" label="Próximos passos" variant="glow" ghost="→">
+      {/* 17 · Próximos passos */}
+      <Slide num="17" label="Próximos passos" variant="glow" ghost="→">
         <Reveal>
           <span className="eyebrow">Próximos passos</span>
           <h2 className="closing">Três decisões e a semana 1 começa.</h2>

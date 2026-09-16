@@ -3,6 +3,8 @@ import { Mark } from "./Mark";
 
 type SlideProps = {
   num: string;
+  /** Âncora para ligações internas (ex.: botão "Ver o projeto do site"). */
+  id?: string;
   label: string;
   ghost?: string;
   /** "light" = tema documental (tabelas, investimento); "glow" = foco de luz atmosférico */
@@ -26,6 +28,7 @@ const variantClass: Record<NonNullable<SlideProps["variant"]>, string> = {
 
 export function Slide({
   num,
+  id,
   label,
   ghost,
   watermark = false,
@@ -37,6 +40,7 @@ export function Slide({
 }: SlideProps) {
   return (
     <section
+      id={id}
       className={`slide ${variantClass[variant]} ${collage ? "with-collage" : ""}`}
       data-section={`${num} ${label}`}
     >
