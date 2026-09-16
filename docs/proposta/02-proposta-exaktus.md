@@ -98,9 +98,9 @@ início de cada mês. Sem custo de saída. O setup é faturado em duas partes:
 > Notas internas: (1) o pacote Reach + Rank fica €500 abaixo da soma
 > (€4.700), não €600 como na Sosoares, porque o Rank aqui é €1.800. (2) A
 > divisão 50/50 do setup é uma suposição; ajustar se o modelo for outro.
-> (3) Proposta no CRM: `vhHedQ1DYdC_`, ligada à oportunidade
+> (3) Proposta no CRM: `OsvijufrNG6D`, ligada à oportunidade
 > `cmu45uu0p002lgewyjsr2iqaf` (valores em BRL a 5,93). Link para o cliente:
-> https://app.salesdrive.com.br/pr/vhHedQ1DYdC_. (4) As capas das ofertas e a
+> https://app.salesdrive.com.br/pr/OsvijufrNG6D. (4) As capas das ofertas e a
 > colagem de mercados vêm do CDN do Higgsfield; as imagens do esboço já
 > estão em `public/brand`.
 

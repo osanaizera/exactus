@@ -51,10 +51,10 @@ públicos (site, esboço) e a nota do CRM. Confirmar antes de enviar.
 
 Valores em `apps/web/src/app/proposta/data.ts` e em
 `docs/proposta/02-proposta-exaktus.md`. Publicado em
-https://exaktus-draivv.vercel.app (projeto Vercel `exaktus-draivv`, deploy
+https://draivv-exaktus.vercel.app (projeto Vercel `draivv-exaktus`, root directory `apps/web`, deploy
 automático a partir do branch de produção). No CRM Draivv: oportunidade
 "Exaktus — Site novo + Rank + Reach (Portugal)" e proposta rastreada
-`vhHedQ1DYdC_` (link para o cliente: https://app.salesdrive.com.br/pr/vhHedQ1DYdC_);
+`OsvijufrNG6D` (link para o cliente: https://app.salesdrive.com.br/pr/OsvijufrNG6D);
 o `TRACKING_PUBLIC_ID` em `proposta/page.tsx` liga o deck a essa proposta.
 
 ## Stack e estrutura

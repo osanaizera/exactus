@@ -55,9 +55,9 @@ const heard = [
 
 /**
  * Telemetria de leitura da proposta (abertura, tempo, scroll, secção) no CRM
- * Draivv. Proposta cmu45uz2w002qgewyb15z55sr, ligada à oportunidade da Exaktus.
+ * Draivv. Proposta cmu461v6t0002kj6qohuqnnta, ligada à oportunidade da Exaktus.
  */
-const TRACKING_PUBLIC_ID = "vhHedQ1DYdC_";
+const TRACKING_PUBLIC_ID = "OsvijufrNG6D";
 
 export default function PropostaPage() {
   return (
